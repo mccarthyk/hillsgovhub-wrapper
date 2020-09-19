@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <a href="#main-content" class="d-sr-only-focusable">Skip to main content</a>
+    <WrapperHeader />
+    <v-main id="main-content">
+      <div class="container">
+        <slot></slot>
+      </div>
+      <WrapperFooter />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WrapperHeader from './components/Header'
+import WrapperFooter from './components/Footer'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    WrapperHeader,
+    WrapperFooter,
+  },
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="css">
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css');
+@import url('https://cdn.jsdelivr.net/npm/vuetify@2.3.10/dist/vuetify.min.css');
 </style>
