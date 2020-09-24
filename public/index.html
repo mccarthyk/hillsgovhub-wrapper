@@ -19,52 +19,20 @@
       >
     </noscript>
 
-    <div id="app">
-      <hcflgov-wrapper>
-        <div v-pre>
-          <div class="aca_wrapper">
-            <h1>Welcome - No Vue with v-pre!!</h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-              beatae porro alias illo tempora neque architecto nihil. Fugit
-              optio explicabo ipsam suscipit, dolores numquam ratione.
-              Cupiditate aperiam sit cum sed?
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-              beatae porro alias illo tempora neque architecto nihil. Fugit
-              optio explicabo ipsam suscipit, dolores numquam ratione.
-              Cupiditate aperiam sit cum sed?
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-              beatae porro alias illo tempora neque architecto nihil. Fugit
-              optio explicabo ipsam suscipit, dolores numquam ratione.
-              Cupiditate aperiam sit cum sed?
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-              beatae porro alias illo tempora neque architecto nihil. Fugit
-              optio explicabo ipsam suscipit, dolores numquam ratione.
-              Cupiditate aperiam sit cum sed?
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-              beatae porro alias illo tempora neque architecto nihil. Fugit
-              optio explicabo ipsam suscipit, dolores numquam ratione.
-              Cupiditate aperiam sit cum sed?
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-              beatae porro alias illo tempora neque architecto nihil. Fugit
-              optio explicabo ipsam suscipit, dolores numquam ratione.
-              Cupiditate aperiam sit cum sed?
-            </p>
-          </div>
-        </div>
-      </hcflgov-wrapper>
+    <div class="aca_wrapper">
+      <h1>Welcome</h1>
+      <p v-for="n in 50">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, beatae
+        porro alias illo tempora neque architecto nihil. Fugit optio explicabo
+        ipsam suscipit, dolores numquam ratione. Cupiditate aperiam sit cum sed?
+      </p>
     </div>
 
+    <div id="app">
+      <hcflgov-wrapper> </hcflgov-wrapper>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="/links.js"></script>
     <script>
       window.$customizationPath =

@@ -3,9 +3,7 @@
     <a href="#main-content" class="d-sr-only-focusable">Skip to main content</a>
     <WrapperHeader />
     <v-main id="main-content">
-      <div class="container">
-        <slot></slot>
-      </div>
+      <div id="app-container" class="container"></div>
       <WrapperFooter />
     </v-main>
   </v-app>
