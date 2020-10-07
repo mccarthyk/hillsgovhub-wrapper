@@ -6,6 +6,7 @@
           <v-btn
             v-for="link in $root.footerLinks"
             :href="link.href"
+            target="_blank"
             color="white"
             text
             rounded

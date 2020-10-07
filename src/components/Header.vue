@@ -105,9 +105,23 @@
 </template>
 
 <script>
+let navDrawer
+
+try {
+  navDrawer = JSON.parse(localStorage.navDrawer) === false ? false : null
+} catch (error) {
+  navDrawer = null
+}
+
 export default {
   data: () => ({
-    navDrawer: null,
+    navDrawer,
   }),
+
+  watch: {
+    navDrawer: function(newVal) {
+      localStorage.navDrawer = newVal
+    },
+  },
 }
 </script>
