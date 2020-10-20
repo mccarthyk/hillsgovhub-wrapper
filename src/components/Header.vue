@@ -33,13 +33,24 @@
         outlined
         rounded
         small
-        target="_blank"
+        :target="$root.helpLink.target ? $root.helpLink.target : '_blank'"
       >
         <v-icon left small v-text="$root.helpLink.icon"></v-icon>
         {{ $root.helpLink.name }}
       </v-btn>
 
-      <v-app-bar-nav-icon @click="navDrawer = !navDrawer"></v-app-bar-nav-icon>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-app-bar-nav-icon
+            @click="navDrawer = !navDrawer"
+            v-bind="attrs"
+            v-on="on"
+          ></v-app-bar-nav-icon>
+        </template>
+        <span>{{ $root.appBarNavTooltip }}</span>
+      </v-tooltip>
+
+      <!-- <v-app-bar-nav-icon @click="navDrawer = !navDrawer"></v-app-bar-nav-icon> -->
     </v-app-bar>
     <!-- /header -->
 
@@ -69,7 +80,11 @@
       <v-list dense>
         <div v-for="link in $root.navLinks" :key="link.name">
           <!-- without children -->
-          <v-list-item v-if="!link.children" :href="link.href">
+          <v-list-item
+            v-if="!link.children"
+            :href="link.href"
+            :target="link.target ? link.target : '_self'"
+          >
             <v-list-item-icon>
               <v-icon>{{ link.icon }}</v-icon>
             </v-list-item-icon>
@@ -89,6 +104,7 @@
             <v-list-item
               v-for="(child, i) in link.children"
               :href="child.href"
+              :target="child.target ? child.target : '_self'"
               :key="i"
             >
               <v-list-item-icon></v-list-item-icon>

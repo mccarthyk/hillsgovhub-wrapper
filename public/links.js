@@ -2,7 +2,9 @@
 window.helpLink = {
   name: 'Help',
   icon: 'mdi-help-circle-outline',
-  href: 'https://www.hillsboroughcounty.org/en/search?q=citizen+access',
+  href:
+    'https://www.hillsboroughcounty.org/en/government/departments/development/HillsGovHub',
+  target: '_blank',
 }
 
 //
@@ -29,15 +31,15 @@ window.navLinks = [
         href: '/hcfl/APO/APOLookup.aspx?TabName=APO',
       },
       {
-        name: 'Building & Site Applications',
+        name: 'Building & Site Records',
         href: '/hcfl/Cap/CapHome.aspx?module=Building&TabName=Building',
       },
       {
-        name: 'Fire Applications',
+        name: 'Fire Records',
         href: '/HCFL/Cap/CapHome.aspx?module=Fire&TabName=Fire',
       },
       {
-        name: 'License Information',
+        name: 'License Records',
         href:
           '/HCFL/GeneralProperty/PropertyLookUp.aspx?isLicensee=Y&TabName=APO',
       },

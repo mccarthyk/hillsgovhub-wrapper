@@ -6,7 +6,7 @@
           <v-btn
             v-for="link in $root.footerLinks"
             :href="link.href"
-            target="_blank"
+            :target="link.target ? link.target : '_blank'"
             color="white"
             text
             rounded
@@ -26,7 +26,7 @@
           :href="link.href"
           icon
           :title="link.name"
-          target="_blank"
+          :target="link.target ? link.target : '_blank'"
           :key="link.name"
         >
           <v-icon v-text="link.icon"></v-icon>

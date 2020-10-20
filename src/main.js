@@ -3,6 +3,7 @@ import HcflgovWrapper from './app'
 
 HcflgovWrapper({
   // appBarTitle: 'Citizen Access',
+  // appBarNavTooltip: 'Toggle Left Navigation',
   // navDrawerTitle: 'Hillsborough County',
   // navDrawerSubtitle: 'Online Government Services',
 }).$mount('#app')

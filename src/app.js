@@ -21,6 +21,7 @@ export default function(data) {
       socialLinks: window.socialLinks,
 
       appBarTitle: 'Citizen Access',
+      appBarNavTooltip: 'Toggle Left Navigation',
       navDrawerTitle: 'Hillsborough County',
       navDrawerSubtitle: 'Online Government Services',
 
