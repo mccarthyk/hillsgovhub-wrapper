@@ -10,7 +10,7 @@
       elevate-on-scroll
       fade-img-on-scroll
       clipped-left
-      :src="$root.customizationPath('/images/bg-park.jpg')"
+      :src="require('@/assets/bg-park.jpg')"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -19,11 +19,15 @@
         ></v-img>
       </template>
 
-      <v-avatar class="mr-5" color="#fff">
-        <v-img :src="$root.customizationPath('/images/avatar.png')"></v-img>
-      </v-avatar>
+      <v-img
+        :src="require('@/assets/logo.png')"
+        max-height="48"
+        max-width="146"
+        contain
+        class="mr-10"
+      />
 
-      <v-toolbar-title v-text="$root.appBarTitle"></v-toolbar-title>
+      <v-toolbar-title v-html="$root.appBarTitle"> </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
