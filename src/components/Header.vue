@@ -25,23 +25,20 @@
         max-width="146"
         contain
         class="mr-10"
+        alt="Hillsborough County Florida"
       />
 
-      <v-toolbar-title v-html="$root.appBarTitle"> </v-toolbar-title>
+      <v-toolbar-title>
+        <v-img
+          :src="require('@/assets/hillsgovhub.png')"
+          max-height="35"
+          max-width="237"
+          contain
+          :alt="$root.appBarTitle"
+        />
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        :href="$root.helpLink.href"
-        class="ma-2"
-        outlined
-        rounded
-        small
-        :target="$root.helpLink.target ? $root.helpLink.target : '_blank'"
-      >
-        <v-icon left small v-text="$root.helpLink.icon"></v-icon>
-        {{ $root.helpLink.name }}
-      </v-btn>
 
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">

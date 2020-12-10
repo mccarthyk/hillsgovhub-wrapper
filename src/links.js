@@ -2,8 +2,7 @@
 window.helpLink = {
   name: 'Help',
   icon: 'mdi-help-circle-outline',
-  href:
-    'https://www.hillsboroughcounty.org/en/government/departments/development/HillsGovHub',
+  href: 'https://www.hillsboroughcounty.org/HillsGovHubHelp',
   target: '_blank',
 }
 

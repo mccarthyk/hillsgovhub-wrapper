@@ -31,7 +31,7 @@ export default function(data) {
       footerLinks: window.footerLinks,
       socialLinks: window.socialLinks,
 
-      appBarTitle: '<strong>Hills</strong>Gov<strong>Hub</strong>',
+      appBarTitle: 'HillsGovHub',
       appBarNavTooltip: 'Toggle Left Navigation',
       navDrawerTitle: 'Hillsborough County',
       navDrawerSubtitle: 'Online Government Services',
