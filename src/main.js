@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import HcflgovWrapper from './app'
 
+// window.pendoData = {
+//   environment: 'STAGE',
+// }
+
 HcflgovWrapper({
   // appBarTitle: 'Citizen Access',
   // appBarNavTooltip: 'Toggle Left Navigation',

@@ -24,18 +24,25 @@
         max-height="48"
         max-width="146"
         contain
-        class="mr-10"
+        class="mr-10 flex-align-self-center"
         alt="Hillsborough County Florida"
       />
 
-      <v-toolbar-title>
+      <v-toolbar-title class="flex-align-self-center">
         <v-img
           :src="require('@/assets/hillsgovhub.png')"
-          max-height="35"
+          :max-height="environment ? 25 : 35"
           max-width="237"
           contain
           :alt="$root.appBarTitle"
         />
+        <!-- environment -->
+        <div
+          style="line-height: 1rem;"
+          class="red darken-3 text-center text-overline white--text font-weight-bold pa-0 mt-1"
+          v-if="environment"
+          v-text="environment"
+        ></div>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -135,6 +142,17 @@ export default {
     navDrawer,
   }),
 
+  computed: {
+    environment() {
+      try {
+        const { environment: env } = window.pendoData
+        return env === 'SUPPORT' || env === 'STAGE' ? env : null
+      } catch (error) {
+        return null
+      }
+    },
+  },
+
   watch: {
     navDrawer: function(newVal) {
       localStorage.navDrawer = newVal
@@ -142,3 +160,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.flex-align-self-center {
+  align-self: center !important;
+}
+</style>
