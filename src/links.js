@@ -30,6 +30,11 @@ window.navLinks = [
         href: '/hcfl/APO/APOLookup.aspx?TabName=APO',
       },
       {
+        name: 'Admin Records',
+        href:
+          '/hcfl/Cap/CapHome.aspx?module=Administrative&TabName=Administrative',
+      },
+      {
         name: 'Building & Site Records',
         href: '/hcfl/Cap/CapHome.aspx?module=Building&TabName=Building',
       },
@@ -48,6 +53,11 @@ window.navLinks = [
     name: 'New',
     icon: 'mdi-plus',
     children: [
+      {
+        name: 'Admin Record Application',
+        href:
+          '/hcfl/Cap/CapApplyDisclaimer.aspx?module=Administrative&TabName=Administrative',
+      },
       {
         name: 'Building & Site Application',
         href:
