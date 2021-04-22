@@ -13078,10 +13078,12 @@ window.navLinks = [{
 }, {
   name: 'New',
   icon: 'mdi-plus',
-  children: [{
-    name: 'Admin Record Application',
-    href: '/hcfl/Cap/CapApplyDisclaimer.aspx?module=Administrative&TabName=Administrative'
-  }, {
+  children: [// {
+  //   name: 'Admin Application',
+  //   href:
+  //     '/hcfl/Cap/CapApplyDisclaimer.aspx?module=Administrative&TabName=Administrative',
+  // },
+  {
     name: 'Building & Site Application',
     href: '/hcfl/Cap/CapApplyDisclaimer.aspx?Module=Building&TabName=Building'
   }, {
