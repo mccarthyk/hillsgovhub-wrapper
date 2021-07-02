@@ -144,11 +144,17 @@ export default {
 
   computed: {
     environment() {
-      try {
-        const { environment: env } = window.pendoData
-        return env === 'SUPPORT' || env === 'STAGE' ? env : null
-      } catch (error) {
-        return null
+      const { host } = window.location
+
+      switch (host.toLowerCase()) {
+        case 'aca-supp.accela.com':
+          return 'SUPPORT'
+
+        case 'aca-test.accela.com':
+          return 'STAGE'
+
+        default:
+          return null
       }
     },
   },
