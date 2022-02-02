@@ -72,6 +72,11 @@ window.navLinks = [
         name: 'Fire Application',
         href: '/hcfl/Cap/CapApplyDisclaimer.aspx?Module=Fire&TabName=Fire',
       },
+      {
+        name: 'Natural Resource Application',
+        href:
+          '/hcfl/Cap/CapApplyDisclaimer.aspx?Module=Building&TabName=Building',
+      },
     ],
   },
   {
