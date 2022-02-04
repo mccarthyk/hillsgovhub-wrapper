@@ -151,6 +151,9 @@ export default {
           return 'SUPPORT'
 
         case 'aca-test.accela.com':
+          return 'TEST'
+
+        case 'aca-nonprod.accela.com':
           return 'STAGE'
 
         default:
