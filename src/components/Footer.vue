@@ -12,7 +12,7 @@
             rounded
             class="my-2"
             v-text="link.name"
-            :key="link.name"
+            :key="link.id"
           >
           </v-btn>
         </v-row>
@@ -27,7 +27,7 @@
           icon
           :title="link.name"
           :target="link.target ? link.target : '_blank'"
-          :key="link.name"
+          :key="link.id"
         >
           <v-icon v-text="link.icon"></v-icon>
         </v-btn>
