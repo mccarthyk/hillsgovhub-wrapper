@@ -1,7 +1,8 @@
-import './links'
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import App from './App.vue'
+import env from './lib/env'
+import { fetchNavLinks, fetchFooterLinks, fetchSocialLinks } from './lib/links'
 
 Vue.config.productionTip = false
 
@@ -9,8 +10,16 @@ Vue.config.ignoredElements = ['.aca_wrapper']
 
 Vue.use(Vuetify)
 
+Vue.prototype.$env = env()
+
 export default function(data) {
   return new Vue({
+    async mounted() {
+      this.navLinks = await fetchNavLinks(this.$env)
+      this.footerLinks = await fetchFooterLinks(this.$env)
+      this.socialLinks = await fetchSocialLinks(this.$env)
+    },
+
     vuetify: new Vuetify({
       theme: {
         themes: {
@@ -26,10 +35,9 @@ export default function(data) {
       'hcflgov-wrapper': App,
     },
     data: () => ({
-      helpLink: window.helpLink,
-      navLinks: window.navLinks,
-      footerLinks: window.footerLinks,
-      socialLinks: window.socialLinks,
+      navLinks: [],
+      footerLinks: [],
+      socialLinks: [],
 
       appBarTitle: 'HillsGovHub',
       appBarNavTooltip: 'Toggle Left Navigation',

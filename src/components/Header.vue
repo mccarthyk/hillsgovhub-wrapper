@@ -31,7 +31,7 @@
       <v-toolbar-title class="flex-align-self-center">
         <v-img
           :src="require('@/assets/hillsgovhub.png')"
-          :max-height="environment ? 25 : 35"
+          :max-height="$env === 'PRODUCTION' ? 35 : 25"
           max-width="237"
           contain
           :alt="$root.appBarTitle"
@@ -40,8 +40,8 @@
         <div
           style="line-height: 1rem;"
           class="red darken-3 text-center text-overline white--text font-weight-bold pa-0 mt-1"
-          v-if="environment"
-          v-text="environment"
+          v-if="$env !== 'PRODUCTION'"
+          v-text="$env"
         ></div>
       </v-toolbar-title>
 
@@ -86,10 +86,10 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <div v-for="link in $root.navLinks" :key="link.name">
+        <div v-for="link in $root.navLinks" :key="link.id">
           <!-- without children -->
           <v-list-item
-            v-if="!link.children"
+            v-if="link.href"
             :href="link.href"
             :target="link.target ? link.target : '_self'"
           >
@@ -97,23 +97,27 @@
               <v-icon>{{ link.icon }}</v-icon>
             </v-list-item-icon>
 
-            <v-list-item-title :title="link.name">{{
-              link.name
-            }}</v-list-item-title>
+            <v-list-item-title :title="link.name">
+              {{ link.name }}
+            </v-list-item-title>
           </v-list-item>
+
           <!-- with children -->
-          <v-list-group v-else :prepend-icon="link.icon">
+          <v-list-group
+            v-else-if="link.children.length"
+            :prepend-icon="link.icon"
+          >
             <template v-slot:activator>
-              <v-list-item-title :title="link.name">{{
-                link.name
-              }}</v-list-item-title>
+              <v-list-item-title :title="link.name">
+                {{ link.name }}
+              </v-list-item-title>
             </template>
 
             <v-list-item
-              v-for="(child, i) in link.children"
+              v-for="child in link.children"
               :href="child.href"
               :target="child.target ? child.target : '_self'"
-              :key="i"
+              :key="child.id"
             >
               <v-list-item-icon></v-list-item-icon>
               <v-list-item-title :title="child.name">{{
@@ -141,26 +145,6 @@ export default {
   data: () => ({
     navDrawer,
   }),
-
-  computed: {
-    environment() {
-      const { host } = window.location
-
-      switch (host.toLowerCase()) {
-        case 'aca-supp.accela.com':
-          return 'SUPPORT'
-
-        case 'aca-test.accela.com':
-          return 'TEST'
-
-        case 'aca-nonprod.accela.com':
-          return 'STAGE'
-
-        default:
-          return null
-      }
-    },
-  },
 
   watch: {
     navDrawer: function(newVal) {

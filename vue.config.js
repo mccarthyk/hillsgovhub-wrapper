@@ -10,4 +10,5 @@ module.exports = {
       libraryExport: 'default',
     },
   },
+  outputDir: 'build/dist',
 }
